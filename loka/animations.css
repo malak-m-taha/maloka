@@ -1,0 +1,257 @@
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+/* ===== FADE IN ===== */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== SLIDE IN LEFT ===== */
+.slide-in-left {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== SLIDE IN RIGHT ===== */
+.slide-in-right {
+    animation: slideInRight 0.8s ease forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== SCALE IN ===== */
+.scale-in {
+    animation: scaleIn 0.6s ease forwards;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== PROJECT CARD HOVER ===== */
+.project-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-card img {
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ===== SKILL PROGRESS ANIMATION ===== */
+.skill-category {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.progress {
+    width: 0 !important;
+    transition: width 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress.animate {
+    width: var(--progress-width) !important;
+}
+
+/* ===== SOCIAL LINKS HOVER ===== */
+.social-links a {
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) rotate(5deg);
+}
+
+/* ===== BUTTON HOVER ===== */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.btn-primary:hover::after {
+    transform: translateX(0);
+}
+
+/* ===== IMAGE REVEAL ===== */
+.image-reveal {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.8s ease;
+}
+
+.image-reveal.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== COUNT UP ANIMATION ===== */
+.count-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.count-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== PAGE TRANSITIONS ===== */
+.page-transition {
+    animation: pageTransition 0.6s ease forwards;
+}
+
+@keyframes pageTransition {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== SMOOTH SCROLLING ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR SCROLL ANIMATION ===== */
+#navbar {
+    transition: all 0.3s ease;
+}
+
+/* ===== TYPING CURSOR BLINK ===== */
+.typing-text {
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* ===== FLOATING BADGE PULSE ===== */
+.floating-badge {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* ===== PROFILE RING ROTATION ===== */
+.profile-ring {
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== SCROLL INDICATOR BOUNCE ===== */
+.scroll-indicator {
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ===== GLASS MORPHISM EFFECT ===== */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== GRADIENT TEXT ===== */
+.gradient-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== STAGGERED ANIMATION FOR CARDS ===== */
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.stagger-children > *.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger-children > *:nth-child(1) { transition-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { transition-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { transition-delay: 0.2s; }
+.stagger-children > *:nth-child(5) { transition-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { transition-delay: 0.3s; }
