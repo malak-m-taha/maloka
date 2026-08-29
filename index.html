@@ -4,26 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Malak Taha | AI & Biomedical Engineer</title>
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Portfolio of Malak Taha - AI & Biomedical Engineering Student. Building intelligent solutions at the intersection of AI, Software, and Biomedical Engineering." />
     <meta name="keywords" content="AI, Biomedical Engineering, Flutter, Python, Web Development, Portfolio, Machine Learning" />
     <meta name="author" content="Malak Taha" />
     <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Malak Taha | AI & Biomedical Engineer" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Malak Taha | AI & Biomedical Engineer" />
     <meta property="og:description" content="Portfolio of Malak Taha - AI & Biomedical Engineering Student" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://malak-portfolio.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     
     <style>
-       
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         :root {
+            /* 🎨 ROYAL PURPLE THEME */
             --primary: #7C3AED;
             --primary-dark: #6D28D9;
             --primary-light: #A78BFA;
@@ -55,6 +58,10 @@
             --font: 'Inter', sans-serif;
             --font-display: 'Playfair Display', serif;
         }
+
+        /* ========================================
+           DARK MODE - ROYAL PURPLE
+           ======================================== */
         body.dark-mode {
             --bg-primary: #0F0A1A;
             --bg-secondary: #1A1228;
@@ -70,6 +77,9 @@
             --shadow-hover: 0 20px 60px rgba(124, 58, 237, 0.15);
         }
 
+        /* ========================================
+           GENERAL STYLES
+           ======================================== */
         html {
             scroll-behavior: smooth;
         }
@@ -108,6 +118,9 @@
             color: white;
         }
 
+        /* ========================================
+           SCROLLBAR
+           ======================================== */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -122,6 +135,9 @@
             background: var(--primary-dark);
         }
 
+        /* ========================================
+           PRELOADER
+           ======================================== */
         #preloader {
             position: fixed;
             inset: 0;
@@ -158,6 +174,9 @@
             }
         }
 
+        /* ========================================
+           NAVBAR
+           ======================================== */
         #navbar {
             position: fixed;
             top: 0;
@@ -253,6 +272,9 @@
             display: none;
         }
 
+        /* ========================================
+           PARTICLES BACKGROUND
+           ======================================== */
         #particles {
             position: fixed;
             top: 0;
@@ -288,7 +310,9 @@
             }
         }
 
-        
+        /* ========================================
+           HERO SECTION
+           ======================================== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -1082,7 +1106,7 @@
             color: var(--primary);
             font-weight: 600;
             font-size: 0.85rem;
-                     transition: var(--transition);
+                        transition: var(--transition);
             border: none;
             cursor: pointer;
             font-family: var(--font);
@@ -1808,9 +1832,6 @@
             }
         }
 
-        /* ========================================
-           SHARE BUTTONS
-           ======================================== */
         .share-buttons {
             display: flex;
             gap: 10px;
@@ -1847,9 +1868,6 @@
             background: #EA4335;
         }
 
-        /* ========================================
-           GLASS MORPHISM EFFECT
-           ======================================== */
         .glass {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
@@ -1859,9 +1877,6 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
-        /* ========================================
-           ANIMATIONS
-           ======================================== */
         .fade-in {
             opacity: 0;
             animation: fadeIn 0.8s ease forwards;
@@ -2105,7 +2120,8 @@
             </div>
         </div>
     </section>
-    <!-- ===== PROJECTS ===== -->
+
+        <!-- ===== PROJECTS ===== -->
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
@@ -3011,7 +3027,6 @@
             });
         }
 
-        // ============================================
                 // ============================================
         // SMOOTH SCROLL FOR NAV LINKS
         // ============================================
@@ -3259,16 +3274,12 @@
                 });
             }
         });
-
-        // Scroll events
         window.addEventListener('scroll', () => {
             handleNavbarScroll();
             handleBackToTop();
             updateActiveNavLink();
             updateScrollProgress();
         });
-
-        // Handle mobile menu close on resize
         window.addEventListener('resize', () => {
             const navLinks = document.getElementById('navLinks');
             const menuBtn = document.getElementById('mobileMenuBtn');
@@ -3280,8 +3291,6 @@
                 }
             }
         });
-
-        // System dark mode preference change
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
             if (!localStorage.getItem('darkMode')) {
                 if (e.matches) {
@@ -3293,8 +3302,6 @@
                 }
             }
         });
-
-        // Clear form message on input
         document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(input => {
             input.addEventListener('input', () => {
                 if (formMessage) {
@@ -3302,23 +3309,15 @@
                 }
             });
         });
-
-        // Back to top button click
         document.getElementById('backToTop')?.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
-        // ============================================
-        // TIMELINE ANIMATION - FIX FOR VISIBILITY
-        // ============================================
         document.querySelectorAll('.timeline-item').forEach(item => {
             item.style.opacity = '0';
             item.style.transform = 'translateX(30px)';
             item.style.transition = 'all 0.6s ease';
         });
-
         document.addEventListener('keydown', (e) => {
-            // Alt + 1-8 to navigate sections
             if (e.altKey) {
                 const sections = ['home', 'about', 'skills', 'projects', 'certificates', 'timeline', 'cv', 'contact'];
                 const index = parseInt(e.key) - 1;
@@ -3331,10 +3330,6 @@
                 }
             }
         });
-
-        // ============================================
-        // VISITOR COUNTER (Simple)
-        // ============================================
         function updateVisitorCount() {
             let count = localStorage.getItem('visitorCount');
             if (!count) {
@@ -3345,10 +3340,6 @@
             console.log(`👁️ Portfolio visitors: ${count}`);
         }
         updateVisitorCount();
-
-        // ============================================
-        // PROJECT DOWNLOAD COUNTER
-        // ============================================
         document.querySelectorAll('.btn-download-project').forEach(btn => {
             btn.addEventListener('click', function() {
                 let downloads = localStorage.getItem('projectDownloads') || 0;
@@ -3357,7 +3348,6 @@
                 console.log(`📥 Project downloads: ${downloads}`);
             });
         });
-
         console.log('%c✅ All features loaded successfully!', 'font-size: 14px; color: #2ED573;');
         console.log('%c📊 Stats:', 'font-size: 14px; color: #FFB800;');
         console.log(`   - ${projectsData.length} projects loaded`);
@@ -3367,5 +3357,3 @@
     </script>
 </body>
 </html>
-
-      
